@@ -1,0 +1,21 @@
+.Arc {
+  stroke-dasharray: 314.15%;
+  stroke-dashoffset: 250%;
+  animation: dashSize 1.5s ease-in infinite alternate;
+}
+
+.Spinner {
+  animation: spin 0.8s linear infinite;
+  height: 3em;
+  width: 3em;
+}
+
+@keyframes dashSize {
+  0%   { stroke-dashoffset: 280%; }
+  100% { stroke-dashoffset: 0;    }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);    }
+}

@@ -1,22 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
+import Spinner from './icons/Spinner';
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+import styles from './styles.css';
 
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
+export default (props) => {
+  return (
+    <div className={props.className}>
+      <div className={styles.OverlayParent}>
+        <div className={styles.Content}>
+        {props.children}
+        </div>
+        {
+          (!props.loading && !props.error)?null:
+            <div className={styles.Overlay}>
+            {
+              props.loading?
+                <Spinner className={styles.GridCentered}/>
+              :(
+                props.error?
+                  <div className={styles.GridCentered}>error</div>
+                :
+                  null
+              )
+            }        
+          </div>
+        }
       </div>
-    )
-  }
+    </div>
+  )
 }
