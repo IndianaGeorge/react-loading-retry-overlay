@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Spinner from './icons/Spinner';
-
+import Alert from './icons/Alert';
 import styles from './styles.css';
 
 export default (props) => {
+  console.log (styles);
   return (
     <div className={props.className}>
       <div className={styles.OverlayParent}>
@@ -14,13 +15,13 @@ export default (props) => {
         </div>
         {
           (!props.loading && !props.error)?null:
-            <div className={styles.Overlay}>
+            <div className={`${styles.Overlay} ${props.colorClass?props.colorClass:styles.ColorClass}`}>
             {
               props.loading?
                 <Spinner className={styles.GridCentered}/>
               :(
                 props.error?
-                  <div className={styles.GridCentered}>error</div>
+                  <Alert className={`${styles.GridCentered} ${props.errorColorClass?props.errorColorClass:styles.ErrorColorClass}`} />
                 :
                   null
               )

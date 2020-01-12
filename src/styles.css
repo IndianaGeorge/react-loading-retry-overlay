@@ -27,7 +27,15 @@
   -ms-grid-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.ColorClass {
   background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.ErrorColorClass {
+  color: red;
 }
 
 .GridCentered {
