@@ -33,7 +33,7 @@ export default class App extends Component {
       <div className="container">
         <LoadOverlay className="blockA">
           <h2>
-            A title
+            Showing content
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -41,7 +41,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay loading className="blockB">
           <h2>
-            A title
+            loading is true
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -49,7 +49,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay error alertIcon={<div>Alert</div>} className="blockC">
           <h2>
-            A title
+            error is true, replaced alertIcon
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -57,7 +57,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay loading={this.state.loadingD} error retryEnabled={this.mayRetryD} onRetry={this.onRetryD.bind(this)} className="blockD">
           <h2>
-            A title
+            Error true, controlled loading and retryEnabled, onRetry function
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -65,7 +65,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay loading spinnerIcon={<div>Loading</div>} errorColorClass="CustomErrorColor" className="blockE">
           <h2>
-            A title
+            Replaced spinnerIcon
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -73,7 +73,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay error loading={this.state.loadingF} timeout="15" retryEnabled onRetry={this.onRetryF.bind(this)} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
           <h2>
-            A title
+            Error true, controlled loading, 15s timeout, retry func, customColor, customErrorColor
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
