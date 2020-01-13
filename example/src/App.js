@@ -47,7 +47,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error className="blockC">
+        <LoadOverlay error alertIcon={<div>Alert</div>} className="blockC">
           <h2>
             A title
           </h2>
@@ -63,7 +63,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay loading colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockE">
+        <LoadOverlay loading spinnerIcon={<div>Loading</div>} errorColorClass="CustomErrorColor" className="blockE">
           <h2>
             A title
           </h2>

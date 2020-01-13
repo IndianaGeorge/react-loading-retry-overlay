@@ -18,16 +18,25 @@ export default (props) => {
             <div className={`${styles.Overlay} ${props.colorClass?props.colorClass:styles.ColorClass}`}>
             {
               props.loading?
-                <Spinner className={styles.GridCentered}/>
+                (
+                  props.spinnerIcon?
+                    (<div className={styles.GridCentered}>{props.spinnerIcon}</div>)
+                  :
+                    <Spinner className={styles.GridCentered}/>
+                )
               :(
                 props.error?
                   <div className={`${styles.GridCentered} ${styles.AlertContainer} ${props.errorColorClass?props.errorColorClass:styles.ErrorColorClass}`}>
-                    <Alert />
+                    {props.alertIcon?props.alertIcon:<Alert />}
                     {
                       (props.retryEnabled && props.onRetry)?
                         <div onClick={props.onRetry} className={styles.RetryButton}>
-                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}><TimedButton onAnimationEnd={props.onRetry} timeout={props.timeout}/></div>
-                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}>{props.retryText?props.retryText:'Retry'}</div>
+                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}>
+                            <TimedButton onAnimationEnd={props.onRetry} timeout={props.timeout}/>
+                          </div>
+                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}>
+                            {props.retryText?props.retryText:'Retry'}
+                          </div>
                         </div>
                       :
                         null
