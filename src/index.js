@@ -7,7 +7,6 @@ import styles from './styles.css';
 import TimedButton from './icons/TimedButton';
 
 export default (props) => {
-  console.log (styles);
   return (
     <div className={props.className}>
       <div className={styles.OverlayParent}>
@@ -27,7 +26,7 @@ export default (props) => {
                     {
                       props.retry?
                         <div onClick={props.retry?props.retry:null} className={styles.RetryButton}>
-                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}><TimedButton /></div>
+                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}><TimedButton onAnimationEnd={props.retry}/></div>
                           <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}>{props.retryText?props.retryText:'Retry'}</div>
                         </div>
                       :
