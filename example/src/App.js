@@ -71,7 +71,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error loading={this.state.loadingF} retryEnabled onRetry={this.onRetryF.bind(this)} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
+        <LoadOverlay error loading={this.state.loadingF} timeout="15" retryEnabled onRetry={this.onRetryF.bind(this)} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
           <h2>
             A title
           </h2>

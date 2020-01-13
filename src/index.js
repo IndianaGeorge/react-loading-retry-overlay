@@ -26,7 +26,7 @@ export default (props) => {
                     {
                       (props.retryEnabled && props.onRetry)?
                         <div onClick={props.onRetry} className={styles.RetryButton}>
-                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}><TimedButton onAnimationEnd={props.onRetry}/></div>
+                          <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}><TimedButton onAnimationEnd={props.onRetry} timeout={props.timeout}/></div>
                           <div className={`${styles.GridOverlap} ${styles.GridCenterInCell}`}>{props.retryText?props.retryText:'Retry'}</div>
                         </div>
                       :

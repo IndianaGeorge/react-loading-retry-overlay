@@ -6,7 +6,8 @@
 .TimerStroke {
   stroke-dasharray: 490;
   stroke-dashoffset: 0;
-  animation: dashSize 5s linear;
+  animation-name: dashSize;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
