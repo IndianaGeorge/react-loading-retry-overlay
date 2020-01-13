@@ -3,8 +3,29 @@ import React, { Component } from 'react';
 import LoadOverlay from 'react-loading-retry-overlay';
 
 export default class App extends Component {
-  retry() {
-    console.log('retrying');
+  constructor(props) {
+    super(props);
+    this.mayRetryD = true;
+    this.attemptsD = 0;
+    this.state = {
+      loadingD: false,
+      loadingF: false,
+    };
+  }
+  onRetryD() {
+    this.attemptsD++;
+    console.log(`Retry #${this.attemptsD}`);
+    if (this.attemptsD>3) {
+      this.mayRetryD = false;
+    }
+    this.setState({...this.state, loadingD:true});
+    setTimeout(() => {
+      this.setState({...this.state, loadingD:false});
+    }, 5000);
+  }
+
+  onRetryF() {
+    this.setState({...this.state, loadingF:true});
   }
   
   render () {
@@ -34,7 +55,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error retry={this.retry} className="blockD">
+        <LoadOverlay loading={this.state.loadingD} error retryEnabled={this.mayRetryD} onRetry={this.onRetryD.bind(this)} className="blockD">
           <h2>
             A title
           </h2>
@@ -50,7 +71,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error retry={this.retry} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
+        <LoadOverlay error loading={this.state.loadingF} retryEnabled onRetry={this.onRetryF.bind(this)} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
           <h2>
             A title
           </h2>
