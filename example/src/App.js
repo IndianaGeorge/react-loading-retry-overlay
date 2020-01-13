@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import LoadOverlay from 'react-loading-retry-overlay';
 
 export default class App extends Component {
+  retry() {
+    console.log('retrying');
+  }
+  
   render () {
     return (
       <div className="container">
@@ -30,7 +34,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error retry className="blockD">
+        <LoadOverlay error retry={this.retry} className="blockD">
           <h2>
             A title
           </h2>
@@ -46,7 +50,7 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error retry colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
+        <LoadOverlay error retry={this.retry} retryText="Reintentar" colorClass="CustomColor" errorColorClass="CustomErrorColor" className="blockF">
           <h2>
             A title
           </h2>

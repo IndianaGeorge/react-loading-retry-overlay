@@ -1,0 +1,15 @@
+.TimedButton {
+  height: 2rem;
+  width: 5.5rem;
+}
+
+.TimerStroke {
+  stroke-dasharray: 921;
+  stroke-dashoffset: 0;
+  animation: dashSize 5s ease-in infinite;
+}
+
+@keyframes dashSize {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 921;    }
+}

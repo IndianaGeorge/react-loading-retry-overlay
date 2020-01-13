@@ -9,11 +9,18 @@
   grid-template-rows: 1fr;
 }
 
-.Content {
+.GridOverlap {
   -ms-grid-column: 1;
   -ms-grid-row: 1; 
   grid-column: 1/1;
   grid-row: 1/1;
+}
+
+.GridCenterInCell {
+  -ms-grid-row-align: center;
+  -ms-grid-column-align: center;
+  align-self: center;
+  justify-self: center;
 }
 
 .Overlay {
@@ -27,6 +34,28 @@
   -ms-grid-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.AlertContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RetryButton {
+  font-weight: 900;
+  font-size: 0.8rem;
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  grid-column: 1/1;
+  grid-row: 1/1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 5.5rem;
 }
 
 .ColorClass {
