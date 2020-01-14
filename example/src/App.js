@@ -27,6 +27,10 @@ export default class App extends Component {
   onRetryF() {
     this.setState({...this.state, loadingF:true});
   }
+
+  onRetryC() {
+    console.log("retried C");
+  }
   
   render () {
     return (
@@ -47,9 +51,9 @@ export default class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
         </LoadOverlay>
-        <LoadOverlay error alertIcon={<div>Alert</div>} className="blockC">
+        <LoadOverlay error alertIcon={<div>Alert</div>} retryEnabled onRetry={this.onRetryC.bind(this)} manualRetry className="blockC">
           <h2>
-            error is true, replaced alertIcon
+            error is true, replaced alertIcon with text, manual retry only
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
@@ -65,7 +69,7 @@ export default class App extends Component {
         </LoadOverlay>
         <LoadOverlay loading spinnerIcon={<div>Loading</div>} errorColorClass="CustomErrorColor" className="blockE">
           <h2>
-            Replaced spinnerIcon
+            Replaced spinnerIcon with text
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
