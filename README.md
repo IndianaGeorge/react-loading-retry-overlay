@@ -6,6 +6,7 @@
 
 ## What is this?
  A loading overlay to cover a widget while it loads data. You may use several of them at the same time independently.
+ [Try the demo at Github.](https://IndianaGeorge.github.io/react-loading-retry-overlay)
 
 ## Features
 - Support for Chrome, Firefox, Edge & even Internet Explorer 11
