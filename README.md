@@ -53,6 +53,7 @@ class Example extends Component {
 - **colorClass**: set color and background-color in a CSS class and pass the class name here to be used only in the overlay.
 - **errorColorClass**: set color in a CSS class and pass the name here to be used only inthe alert icon and retry button.
 - **className**: you may pass an additional className to be used on top of everything.
+- **silent**: if true, failures will not be shown while retries are enabled. Timeout will be respected.
 
 ## Caveats
 - Automatic retry doesn't work in IE11. No countdown animation either.
