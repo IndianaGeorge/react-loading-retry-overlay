@@ -21,6 +21,13 @@ export default (props) => {
       }
     }
   }, [props.error, props.loading, props.silent, props.retryEnabled, props.onRetry]);
+  useEffect(()=>{
+    return ()=>{
+      if (timer.current && timer.current.active) {
+        timer.current.stop();
+      }
+    }
+  },[]);
   return (
     <div className={props.className}>
       <div className={styles.OverlayParent}>
