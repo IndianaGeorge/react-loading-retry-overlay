@@ -9,10 +9,13 @@ export default class App extends Component {
     this.attemptsD = 1;
     this.mayRetryG = true;
     this.attemptsG = 1;
+    this.attemptsH = 1;
     this.state = {
       loadingD: false,
       loadingF: false,
       loadingG: false,
+      loadingH: false,
+      errorH: false,
     };
   }
   onRetryD() {
@@ -46,6 +49,25 @@ export default class App extends Component {
       console.log("G failed")
     }, 5000);
   }
+
+  onRetryH() {
+    this.attemptsH++;
+    console.log(`Retry H #${this.attemptsH}`);
+    this.setState({...this.state, loadingH:true});
+    setTimeout(() => {
+      this.setState({...this.state, loadingH:false});
+      if (this.attemptsH>2) {
+        this.attemptsH = 1;
+        this.setState({...this.state, loadingH:false, errorH:false});
+        console.log("H success!");
+      }
+      else {
+        this.setState({...this.state, errorH:true});
+        console.log("H failed");
+      }
+    }, 3000);
+  }
+
 
   onRetryC() {
     console.log("retried C");
@@ -109,6 +131,12 @@ export default class App extends Component {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales quam in consequat dictum. Vivamus laoreet ipsum in imperdiet maximus. Donec aliquet id sem sit amet pharetra. Nunc in sem.
           </p>
+        </LoadOverlay>
+        <LoadOverlay loading={this.state.loadingH} timeout="2" retryEnabled error={this.state.errorH} onRetry={this.onRetryH.bind(this)} className="blockH">
+          <h2>
+            Controlled loading, controlled error, infinite retries
+          </h2>
+          <button onClick={this.onRetryH.bind(this)}> Go! </button>
         </LoadOverlay>
       </div>
     )
