@@ -31,28 +31,28 @@
   grid-column: 1/1;
   grid-row: 1/1;
   display: -ms-grid;
+  display: grid;
   -ms-grid-columns: 1fr auto 1fr;
   -ms-grid-rows: 1fr auto 1fr;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 1fr auto 1fr;
 }
 
+.NoPointerEvents {
+  pointer-events: none;
+}
+
 .HiddenOverlay {
-  display: none;
+  visibility: hidden;
   opacity: 0;
-  -webkit-animation: fadeout 1s both;
-  animation: fadeout 1s both;
+  transition: visibility 0s 1s, opacity 1s ease;
 }
 
 .ShownOverlay {
-  display: grid;
+  visibility: visible;
   opacity: 1;
-  -webkit-animation: fadein 1s both;
-  animation: fadein 1s both;
+  transition: opacity 1s ease;
 }
-
-@-webkit-keyframes fadein { 0%{opacity: 0;} }
-@keyframes fadein { 0%{opacity: 0;} }
 
 .AlertContainer {
   display: flex;

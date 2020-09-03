@@ -7,6 +7,8 @@ import styles from './styles.css';
 import TimedButton from './icons/TimedButton';
 import Timer from './Timer';
 
+const stopEvent= (event)=>{ event.stopPropagation(); event.preventDefault(); console.log(event); };
+
 export default (props) => {
   const timer = useRef();
   useEffect(()=>{
@@ -31,10 +33,10 @@ export default (props) => {
   return (
     <div className={props.className}>
       <div className={styles.OverlayParent}>
-        <div className={styles.GridOverlap}>
+        <div className={`${styles.GridOverlap} ${(!props.loading && !props.error)?null:styles.NoPointerEvents}`}>
         {props.children}
         </div>
-          <div className={`${styles.Overlay} ${props.colorClass?props.colorClass:styles.ColorClass} ${(!props.loading && !props.error)?styles.HiddenOverlay:styles.ShownOverlay}`}>
+        <div className={`${styles.Overlay} ${props.colorClass?props.colorClass:styles.ColorClass} ${(!props.loading && !props.error)?styles.HiddenOverlay:styles.ShownOverlay}`}>
           {
             (props.loading || (props.error && props.silent && props.retryEnabled && props.onRetry))?
               (
