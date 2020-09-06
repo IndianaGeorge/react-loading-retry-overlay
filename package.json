@@ -1,6 +1,6 @@
 {
   "name": "react-loading-retry-overlay",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An overlay showing a loading indicator and retry button according to props",
   "author": "IndianaGeorge",
   "license": "MIT",
